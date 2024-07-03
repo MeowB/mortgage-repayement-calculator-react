@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-300, 24px);
+  align-self: stretch;
+}
+form label {
+  color: var(--color-slate-700, #4E6E7E);
+  /* desktop/text-preset-4 */
+  font-family: "Plus Jakarta Sans";
+  font-size: var(--font-size-text-preset-4, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 24px */
+  margin-bottom: 12px 24px;
+}
+form input[type=number] {
+  width: 250px;
+  padding: 12.5px 16px;
+  border-radius: 4px;
+  border: 1px solid #6B94A8;
+  width: calc(100% - 32px);
+}
+form .mortgage-amount {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+form .mortgage-amount input[name=mortgage-amount] {
+  background-image: url("../assets/images/pound.svg"), linear-gradient(90deg, #E4F4FD 16%, #fff 16%);
+  background-repeat: no-repeat;
+  background-position: 6% 50%;
+  text-indent: 40px;
+}
+form .mortgage-amount input[name=mortgage-amount] label {
+  gap: 12px;
+}
+form .mortgage-term {
+  position: relative;
+}
+form .mortgage-term input[name=mortgage-term] {
+  background-image: linear-gradient(270deg, #E4F4FD 22%, #fff 22%);
+  background-repeat: no-repeat;
+  margin-top: 12px;
+}
+form .mortgage-term p {
+  font-family: "Plus Jakarta Sans";
+  position: absolute;
+  width: 100%;
+  top: 52%;
+  margin-left: 83%;
+  margin-top: 5px;
+  font-weight: 700;
+  color: #4E6E7E;
+  font-size: 16px;
+}
+form input[name=interest-rate] {
+  background-image: url("../assets/images/percent.svg"), linear-gradient(270deg, #E4F4FD 16%, #fff 16%);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-x: 95%;
+}
+form .radio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--spacing-150, 12px);
+}
+form .radio h2 {
+  font-family: "plus jakarta sans";
+  font-weight: 500;
+  color: #4E6E7E;
+  font-size: 24px;
+}
+form .radio label {
+  font-weight: 700;
+  color: #133041;
+}
+form .radio input[type=radio] {
+  height: 25px;
+  width: 55px;
+  vertical-align: middle;
+}
+form .radio div {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid #6B94A8;
+  border-radius: 4px;
+  width: 100%;
+  justify-content: start;
+  padding: 12.5px 0;
+}
+form input[type=button] {
+  background: url(../assets/images/calc.svg) no-repeat center;
+  cursor: pointer;
+  padding: 16.5px 46px;
+  width: 100%;
+  background-color: #D8DB2F;
+  border-radius: 999px;
+  border: none;
+}
+
+/*# sourceMappingURL=Form.css.map */

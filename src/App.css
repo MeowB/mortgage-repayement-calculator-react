@@ -1,0 +1,28 @@
+.main-content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--spacing-100, 8px);
+	align-self: stretch;
+	margin: 32px 24px;
+
+	h1 {
+		color: var(--color-slate-900, #133041);
+		/* desktop/text-preset-2 */
+		font-family: "Plus Jakarta Sans";
+		font-size: var(--font-size-text-preset-2, 24px);
+		font-style: normal;
+		font-weight: 700;
+		line-height: 125%; /* 30px */
+	}
+
+	a {
+
+		color: #4E6E7E;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 24px;
+	}
+
+}
