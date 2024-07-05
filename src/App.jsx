@@ -24,9 +24,6 @@ function App() {
 	function handleSubmit() {
 		if (amount == 0) {
 			setAmountError(true)
-			const inputAmount = document.querySelector("input[name=mortgage-amount]")
-			inputAmount.style.backgroundImage = `url(${poundSvg}), linear-gradient(90deg, #D73328 16%, #fff 16%)`
-			console.log(inputAmount)
 		} else {
 			setAmountError(false)
 		}
@@ -70,6 +67,7 @@ function App() {
 								onChange={(e) => setAmount(e.target.value)}
 								style={{ 	
 									borderColor: amountError ? 'red' : '', 
+									backgroundImage: amountError ? "url("+ poundSvg + "), linear-gradient(90deg, #D73328 16%, #fff 16%)" : '' 
 								}}
 						/>
 						{amountError ? errorMessage : ''}
