@@ -2,7 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import Result from './components/Result';
 import poundSvg from './assets/images/poundError.svg'
-import percentSvg from './assets/images/percentError.svg
+import percentSvg from './assets/images/percentError.svg'
+
 
 function App() {
 	// setting all the data input
@@ -23,6 +24,9 @@ function App() {
 	function handleSubmit() {
 		if (amount == 0) {
 			setAmountError(true)
+			const inputAmount = document.querySelector("input[name=mortgage-amount]")
+			inputAmount.style.backgroundImage = `url(${poundSvg}), linear-gradient(90deg, #D73328 16%, #fff 16%)`
+			console.log(inputAmount)
 		} else {
 			setAmountError(false)
 		}
@@ -66,7 +70,6 @@ function App() {
 								onChange={(e) => setAmount(e.target.value)}
 								style={{ 	
 									borderColor: amountError ? 'red' : '', 
-									backgroundImage: amountError ? `url(${poundSvg}), linear-gradient(90deg, #D73328 16%, #fff 16%)` : '' 
 								}}
 						/>
 						{amountError ? errorMessage : ''}
@@ -100,7 +103,7 @@ function App() {
 								onChange={(e) => setRate(e.target.value)} 
 								style={{ 	
 									borderColor: rateError ? 'red' : '', 
-									backgroundImage: `url(${percentSvg}), linear-gradient(270deg, #D73328 16%, #fff 16%)`
+									backgroundImage: rateError ? `url(${percentSvg}), linear-gradient(270deg, #D73328 16%, #fff 16%)` : '' 
 								}}
 						/>
 						{rateError ? errorMessage : ''}
