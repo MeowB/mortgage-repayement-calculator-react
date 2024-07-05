@@ -3,9 +3,10 @@ import './result.css'
 import illustrationSvg from '../assets/images/illustration-empty.svg'
 
 function Result(props) {
+	console.log(props.formFilled)
 	const bool = true
 
-	if (bool) {
+	if (props.formFilled) {
 		return (
 			<div className="result-filled">
 				<div className="text-content">

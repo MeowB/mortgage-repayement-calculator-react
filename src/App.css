@@ -46,6 +46,7 @@ form {
 	gap: var(--spacing-300, 24px);
 	align-self: stretch;
 	
+	
 	label {
 		color: var(--color-slate-700, #4E6E7E);
 		/* desktop/text-preset-4 */
@@ -86,31 +87,39 @@ form {
 
 	.mortgage-term{
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 12px;
 
 		input[name=mortgage-term] {
 			background-image: linear-gradient(270deg, #E4F4FD 22%, #fff 22%);
 			background-repeat: no-repeat;
-			margin-top: 12px;
 		}
 
-		p {
-			font-family: "Plus Jakarta Sans";
-			position: absolute;
-			width: 100%;
-			top: 52%;
-			margin-left: 83%;
-			margin-top: 5px;
-			font-weight: 700;
-			color: #4E6E7E;
-			font-size: 16px;
+		.absolute {
+			p {
+				font-family: "Plus Jakarta Sans";
+				position: absolute;
+				top: 44px;
+				margin-left: 83%;
+				margin-top: 5px;
+				font-weight: 700;
+				color: #4E6E7E;
+				font-size: 16px;
+			}
 		}
 	}
 
-	input[name=interest-rate] {
-		background-image: url('./assets/images/percent.svg'), linear-gradient(270deg, #E4F4FD 16%, #fff 16%);
-		background-repeat: no-repeat;
-		background-position: right;
-		background-position-x:  95%;
+	.interest-rate {
+
+		input[name=interest-rate] {
+			margin: 12px 0;
+			background-image: url('./assets/images/percent.svg'), linear-gradient(270deg, #E4F4FD 16%, #fff 16%);
+			background-repeat: no-repeat;
+			background-position: right;
+			background-position-x:  95%;
+		}
 	}
 
 	.radio {
@@ -119,11 +128,13 @@ form {
 		width: 100%;
 		gap: var(--spacing-150, 12px);
 
+
+
 		h2 {
 			font-family: "plus jakarta sans";
 			font-weight: 500;
 			color: #4E6E7E;
-			font-size: 24px;
+			font-size: 16px;
 		}
 
 		label {
@@ -136,7 +147,12 @@ form {
 			width: 55px;
 			vertical-align: middle;
 		}
-		
+
+		div:has(input[type=radio]:checked) {
+			background-color: rgba(216, 219, 47, 0.15);
+			border: 1px solid var(--color-lime, #D8DB2F);
+		}
+
 		div {
 			display: flex;
 			flex-direction: row-reverse;
@@ -160,3 +176,13 @@ form {
 	}
 }
 
+.error {
+	color: var(--color-red, #D73328);
+
+	/* desktop/text-preset-5 */
+	font-family: "Plus Jakarta Sans";
+	font-size: var(--font-size-text-preset-5, 14px);
+	font-style: normal;
+	font-weight: 500;
+	line-height: 150%; /* 21px */
+}
