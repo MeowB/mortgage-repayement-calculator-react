@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Result from './components/Result';
 import poundSvg from './assets/images/poundError.svg'
-import percentSvg from './assets/images/percentError.svg'
+import percentSvg from './assets/images/percentError.svg
 
 function App() {
 	// setting all the data input
@@ -100,7 +100,7 @@ function App() {
 								onChange={(e) => setRate(e.target.value)} 
 								style={{ 	
 									borderColor: rateError ? 'red' : '', 
-									backgroundImage: rateError ? `url(${percentSvg}), linear-gradient(270deg, #D73328 16%, #fff 16%)` : '' 
+									backgroundImage: `url(${percentSvg}), linear-gradient(270deg, #D73328 16%, #fff 16%)`
 								}}
 						/>
 						{rateError ? errorMessage : ''}
