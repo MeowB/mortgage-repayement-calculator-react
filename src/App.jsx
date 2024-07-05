@@ -67,7 +67,7 @@ function App() {
 								onChange={(e) => setAmount(e.target.value)}
 								style={{ 	
 									borderColor: amountError ? 'red' : '', 
-									backgroundImage: amountError ? `linear-gradient(90deg, #D73328 16%, #fff 16%)` : '' 
+									backgroundImage: amountError ? `url(${poundSvg}), linear-gradient(90deg, #D73328 16%, #fff 16%)` : '' 
 								}}
 						/>
 						{amountError ? errorMessage : ''}
