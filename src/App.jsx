@@ -7,10 +7,10 @@ import percentSvg from './assets/images/percentError.svg'
 
 function App() {
 	// setting all the data input
-	const [amount, setAmount] = useState(0)
-	const [term, setTerm] = useState(0)
-	const [rate, setRate] = useState(0)
-	const [type, setType] = useState('')
+	const [amount, setAmount] = useState(10000)
+	const [term, setTerm] = useState(5)
+	const [rate, setRate] = useState(2)
+	const [type, setType] = useState('repayement')
 	const [formFilled, setFormFilled] = useState(false)
 
 
@@ -51,13 +51,19 @@ function App() {
 			setFormFilled(true)
 		}
 	}
+
+	function handleClearClick() {
+		const form = document.getElementById("form").reset()
+		setFormFilled(false)
+	}
+
   return (
     <>
 		<div className="main-content">
 			<h1>Mortgage Calculator</h1>
-			<a href="#">Clear All</a>
+			<a onClick={handleClearClick}>Clear All</a>
 			<div className="form">
-				<form action="#">
+				<form action="#" id='form'>
 					<div className="mortgage-amount">
 						<label htmlFor="mortgage-amount">Mortgage Amount</label>
 						<input 	type="number" 
