@@ -1,8 +1,5 @@
 
-
-/*# sourceMappingURL=result.css.map */
 .result-empty {
-	width: 100%;
 	background: #133041;
 	display: flex;
 	padding: var(--spacing-400, 32px) 0;
@@ -137,5 +134,15 @@
 					line-height: 125%; /* 30px */
 				}
 		}
+	}
+}
+
+.result-filled, .result-empty {
+	padding: 40px;
+}
+
+@media only screen and (min-width: 688px) {
+	.result-empty, .result-filled {
+		border-radius: 0 0 24px 24px;
 	}
 }

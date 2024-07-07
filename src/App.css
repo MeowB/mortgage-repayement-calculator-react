@@ -8,6 +8,10 @@
 	gap: var(--spacing-100, 8px);
 	align-self: stretch;
 	margin: 32px 24px;
+	max-width: 375px;
+	margin: auto;
+	gap: 40px;
+	padding: 40px;
 
 	h1 {
 		color: var(--color-slate-900, #133041);
@@ -17,17 +21,20 @@
 		font-style: normal;
 		font-weight: 700;
 		line-height: 125%; /* 30px */
+		margin-bottom: 8px;
 	}
 
 	a {
 
 		color: #4E6E7E;
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		margin-bottom: 24px;
 		cursor: pointer;
 		text-decoration: underline;
+	}
+
+	a:hover {
+		color: #133041;
 	}
 
 }
@@ -40,141 +47,202 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
+.form {
+	width: 100%;
 
-form {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: var(--spacing-300, 24px);
-	align-self: stretch;
-	
-	
-	label {
-		color: var(--color-slate-700, #4E6E7E);
-		/* desktop/text-preset-4 */
-		font-family: "Plus Jakarta Sans";
-		font-size: var(--font-size-text-preset-4, 16px);
-		font-style: normal;
-		font-weight: 500;
-		line-height: 150%; /* 24px */
-		margin-bottom: 12px 24px;
-	}
-
-	input[type=number] {
-		width: 250px;
-		padding: 12.5px 16px;
-		border-radius: 4px;
-		border: 1px solid #6B94A8;
-		width: calc(100% - 32px);
-	}
-
-	.mortgage-amount {
+	form {
 		display: flex;
 		flex-direction: column;
-		width: 100%;
-		gap: 12px;
-
-		input[name=mortgage-amount] {
-			background-image: url('./assets/images/pound.svg'), linear-gradient(90deg, #E4F4FD 16%, #fff 16%);
-			background-repeat: no-repeat;
-			background-position: 6% 50%;
-			text-indent: 40px;
+		align-items: flex-start;
+		gap: var(--spacing-300, 24px);
+		align-self: stretch;
+		
+		
+		label {
+			color: var(--color-slate-700, #4E6E7E);
+			/* desktop/text-preset-4 */
+			font-family: "Plus Jakarta Sans";
+			font-size: var(--font-size-text-preset-4, 16px);
+			font-style: normal;
+			font-weight: 500;
+			line-height: 150%; /* 24px */
+			margin-bottom: 12px 24px;
+		}
 	
-			label {
-				gap: 12px;
+		input[type=number] {
+			width: 250px;
+			padding: 12.5px 16px;
+			border-radius: 4px;
+			border: 1px solid #6B94A8;
+			width: calc(100% - 32px);
+		}
+		
+
+		.mortgage-amount {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			gap: 12px;
+			position: relative;
+	
+			input[name=mortgage-amount] {
+				background-image: linear-gradient(90deg, #E4F4FD 60px, #fff 60px);
+				text-indent: 50px;
+				label {
+					gap: 12px;
+				}
+			}
+
+			input[type=number]:hover {
+				cursor: pointer;
+				border-color: #133041;
+			}
+
+			input[type=number]:focus {
+				cursor: pointer;
+				outline: none;
+				border: 1px solid #D8DB2F;
+				background-image: linear-gradient(90deg, #D8DB2F 60px, #fff 60px);
+			}
+
+			svg {
+				position: absolute;
+				top: 50px;
+				left: 25px;
 			}
 		}
-	}
+	
+		.wrapper {
+			width: 100%;
 
+			.mortgage-term{
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				gap: 12px;
+		
+				input[name=mortgage-term] {
+					background-image: linear-gradient(270deg, #E4F4FD 80px, #fff 80px);
+					background-repeat: no-repeat;
+				}
+		
+				input[type=number]:hover {
+					cursor: pointer;
+					border-color: #133041;
+				}
+	
+				input[type=number]:focus {
+					cursor: pointer;
+					outline: none;
+					border: 1px solid #D8DB2F;
+					background-image: linear-gradient(270deg, #D8DB2F 80px, #fff 80px);
+				}
+				.absolute {
+					p {
+						font-family: "Plus Jakarta Sans";
+						position: absolute;
+						top: 45px;
+						right: 20px;
+						font-weight: 700;
+						color: #4E6E7E;
+						font-size: 16px;
+					}
+				}
+			}
+		
+			.interest-rate {
+				width: 100%;
+				position: relative;
+				input[name=interest-rate] {
+					margin: 12px 0;
+					background-image: linear-gradient(270deg, #E4F4FD 60px, #fff 60px);
+					background-repeat: no-repeat;
+					background-position: right;
+					background-position-x:  95%;
+				}
+	
+				input[type=number]:hover {
+					cursor: pointer;
+					border-color: #133041;
+				}
+	
+				input[type=number]:focus {
+					cursor: pointer;
+					outline: none;
+					border: 1px solid #D8DB2F;
+					background-image: linear-gradient(270deg, #D8DB2F 60px, #fff 60px);
+				}
 
-	.mortgage-term{
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		gap: 12px;
-
-		input[name=mortgage-term] {
-			background-image: linear-gradient(270deg, #E4F4FD 22%, #fff 22%);
-			background-repeat: no-repeat;
+				svg {
+					position: absolute;
+					right: 20px;
+					top: 50px;
+				}
+			}
 		}
+	
+		.radio {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			gap: var(--spacing-150, 12px);
 
-		.absolute {
-			p {
-				font-family: "Plus Jakarta Sans";
-				position: absolute;
-				top: 44px;
-				margin-left: 83%;
-				margin-top: 5px;
-				font-weight: 700;
+			h2 {
+				font-family: "plus jakarta sans";
+				font-weight: 500;
 				color: #4E6E7E;
 				font-size: 16px;
 			}
-		}
-	}
-
-	.interest-rate {
-
-		input[name=interest-rate] {
-			margin: 12px 0;
-			background-image: url('./assets/images/percent.svg'), linear-gradient(270deg, #E4F4FD 16%, #fff 16%);
-			background-repeat: no-repeat;
-			background-position: right;
-			background-position-x:  95%;
-		}
-	}
-
-	.radio {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		gap: var(--spacing-150, 12px);
-
-
-
-		h2 {
-			font-family: "plus jakarta sans";
-			font-weight: 500;
-			color: #4E6E7E;
-			font-size: 16px;
-		}
-
-		label {
-			font-weight: 700;
-			color: #133041;
-		}
+	
+			label {
+				font-weight: 700;
+				color: #133041;
+				cursor: pointer;
+			}
+			
+			input[type=radio] {
+				height: 25px;
+				width: 55px;
+				vertical-align: middle;
+				cursor: pointer;
+				accent-color: yellow;
+			}
 		
-		input[type=radio] {
-			height: 25px;
-			width: 55px;
-			vertical-align: middle;
+			div:hover {
+				border-color: #D8DB2F;
+				cursor: pointer;
+			}
+	
+			div:has(input[type=radio]:checked) {
+				background-color: rgba(216, 219, 47, 0.15);
+				border: 1px solid var(--color-lime, #D8DB2F);
+			}
+	
+			div {
+				display: flex;
+				flex-direction: row-reverse;
+				border: 1px solid #6B94A8;
+				border-radius: 4px;
+				width: 100%;
+				justify-content: start;
+				padding: 12.5px 0;
+			}
 		}
-
-		div:has(input[type=radio]:checked) {
-			background-color: rgba(216, 219, 47, 0.15);
-			border: 1px solid var(--color-lime, #D8DB2F);
-		}
-
-		div {
-			display: flex;
-			flex-direction: row-reverse;
-			border: 1px solid #6B94A8;
-			border-radius: 4px;
+	
+		input[type=button] {
+			background: url(./assets/images/calc.svg) no-repeat center;
+			cursor: pointer;
+			padding: 16.5px 46px ;
 			width: 100%;
-			justify-content: start;
-			padding: 12.5px 0;
+			background-color: #D8DB2F;
+			border-radius: 999px;
+			border: none;
 		}
-	}
 
-	input[type=button] {
-		background: url(./assets/images/calc.svg) no-repeat center;
-		cursor: pointer;
-		padding: 16.5px 46px ;
-		width: 100%;
-		background-color: #D8DB2F;
-		border-radius: 999px;
-		border: none;
-		margin-bottom: 32px;
+		input[type=button]:hover {
+			background-color: #D8DB2F99;
+		}
 	}
 }
 
@@ -187,4 +255,45 @@ form {
 	font-style: normal;
 	font-weight: 500;
 	line-height: 150%; /* 21px */
+}
+
+
+@media screen and (min-width: 600px) {
+
+	:root {
+		background: var(--color-slate-100, #E4F4FD);
+	}
+
+	.main-content {
+		padding: 0;
+		border-radius: 24px;
+		background: var(--color-white, #FFF);
+		box-shadow: 0px 32px 64px 0px rgba(19, 48, 65, 0.10);
+		max-width: 688px;
+		margin: 40px auto;
+
+		.text {
+			padding: 40px 40px 0 40px;
+			width: calc(100% - 80px);
+			display: flex;
+			justify-content: space-between;
+			a {
+				justify-content: end;
+			}
+		}
+
+		.wrapper {
+			display: flex;
+			gap: 24px;
+		}
+
+		.form {
+			form {
+				padding: 0 40px;
+				input[type=button] {
+					width: 318px;
+				}
+			}
+		}
+	}
 }
