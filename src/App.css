@@ -259,8 +259,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 .attribution {
 	font-size: 14px;
-	width: 100%;
 	text-align: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 
 	a {
 		color: #4E6E7E;
@@ -270,8 +272,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media screen and (min-width: 768px) {
 
+	body {
+		height: calc(100vh - 56px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
 	:root {
 		background: var(--color-slate-100, #E4F4FD);
+
 	}
 
 	.main-content {
@@ -314,9 +324,10 @@ input[type=number]::-webkit-outer-spin-button {
 		flex-direction: row;
 		gap: 80px;
 		max-width: 950px;
+		position: relative;
 		.text {
 			position: absolute;
-			top: 40px;
+			top: 20px;
 			width: 400px;
 		}
 
