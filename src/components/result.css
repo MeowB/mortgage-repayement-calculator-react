@@ -146,3 +146,18 @@
 		border-radius: 0 0 24px 24px;
 	}
 }
+
+@media screen and (min-width: 1440px) {
+	.result-empty, .result-filled {
+		gap: var(--spacing-500, 40px);
+		border-radius: 0px 24px 24px 80px;
+	}
+
+	.result-empty {
+		gap: 20px;
+
+		p {
+			padding-bottom: 40px
+		}
+	}
+}
